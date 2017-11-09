@@ -75,13 +75,13 @@ def add_to_all(s):
 def gen_log(ip, img):
   cmd = "./clair-scanner -w filter/others.yaml -l logs/no-affect.log" + " --ip " + ip + " " + img
   subprocess.call(cmd.split())
-  cmd = "./clair-scanner -w filter/only-low.yaml -l logs/low.log" + " --ip " + ip + " " + img
+  cmd = "./clair-scanner -w filter/low.yaml -l logs/low.log" + " --ip " + ip + " " + img
   subprocess.call(cmd.split())
-  cmd = "./clair-scanner -w filter/only-moderate.yaml -l logs/moderate.log" + " --ip " + ip + " " + img
+  cmd = "./clair-scanner -w filter/moderate.yaml -l logs/moderate.log" + " --ip " + ip + " " + img
   subprocess.call(cmd.split())
-  cmd = "./clair-scanner -w filter/only-important.yaml -l logs/important.log" + " --ip " + ip + " " + img
+  cmd = "./clair-scanner -w filter/important.yaml -l logs/important.log" + " --ip " + ip + " " + img
   subprocess.call(cmd.split())
-  cmd = "./clair-scanner -w filter/only-critical.yaml -l logs/critical.log" + " --ip " + ip + " " + img
+  cmd = "./clair-scanner -w filter/critical.yaml -l logs/critical.log" + " --ip " + ip + " " + img
   subprocess.call(cmd.split())
 
 def gen_report(img_name, tag, this_year, cve_start_year):
