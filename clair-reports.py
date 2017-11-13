@@ -27,6 +27,7 @@ def main():
   else:
     print "Invalid Arguments"
 
+##return matched cve id from low, moderate, important or critical
 def filters(all_cve, path):
   fo = open(path, 'r')
   fils = fo.readlines()
@@ -38,6 +39,7 @@ def filters(all_cve, path):
        result.append(all_cve[i])
   return result
 
+##find cve id from log
 def find_cveid(path, this_year, cve_start_year):
   result = open(path, 'r')
   cve = result.readlines()
@@ -58,10 +60,12 @@ def find_cveid(path, this_year, cve_start_year):
             cvename.append('CVE-' + cvexist[cveinex][j] + '-' + cvexist[cveinex][j+1])
   return cvename
 
+##run clair-scanner and generate log
 def gen_log(ip, img):
   cmd = "./clair-scanner -w filters/others.yaml -l logs/tmp.log" + " --ip " + ip + " " + img
   subprocess.call(cmd.split())
 
+##generate web report(image_name.html)
 def gen_report(img_name, this_year, cve_start_year, low, moderate, important, critical):
   s = 'www/content/clair.rst'
   title_sharp = ''
@@ -82,6 +86,7 @@ def gen_report(img_name, this_year, cve_start_year, low, moderate, important, cr
   cmd = "pelican content"
   subprocess.call(cmd.split())
 
+##write report content and link to redhat cve database details
 def report_content(path, vuls, level):
   tmp = ''
   hyperlink = []
@@ -99,7 +104,8 @@ def report_content(path, vuls, level):
       report.write(hyperlink[j])
     report.write('\n')
     report.close()
-	
+
+##clear log
 def clear():
   cmd = "rm ../logs/tmp.log"
   subprocess.call(cmd.split())
