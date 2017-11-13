@@ -136,7 +136,7 @@ def report_content(path, vuls, level, no_use):
     report.close()
 	
 def clear():
-  cmd = "rm logs/low.log logs/moderate.log logs/important.log logs/critical.log logs/no-affect.log"
+  cmd = "rm ../logs/low.log ../logs/moderate.log ../logs/important.log ../logs/critical.log ../logs/no-affect.log"
   subprocess.call(cmd.split())
 
 if __name__ == "__main__":
