@@ -124,7 +124,7 @@ def report_content(path, vuls, level, no_use):
     level.remove(no_use[x])
   for i in range(len(level)):
     tmp = tmp + level[i] + '_ '
-    hyperlink.append('.. _' + level[i] + ': https://cve.mitre.org/cgi-bin/cvename.cgi?name=' + level[i] + '\n')
+    hyperlink.append('.. _' + level[i] + ': http://www.cvedetails.com/cve/' + level[i] + '/?q=' + level[i] + '\n')
   if tmp == '':
     report.write('not vulnerable\n\n')
   else:
