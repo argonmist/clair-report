@@ -89,6 +89,6 @@ Run the scrip in clair-scanner folder.
 ```
 git clone https://github.com/argonmist/clair-report.git
 mv clair-report/* ./
-python clair-report.py --ip YOUR-HOST-IP --image DOCKER-IMAGE-NAME
+python clair-reports.py --ip YOUR-HOST-IP --image DOCKER-IMAGE-NAME
 ```
 Go to YOUR-HOST-IP:8080, you'll see the report(you can [chage the template](http://www.pelicanthemes.com/) you like).
