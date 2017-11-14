@@ -1,5 +1,5 @@
 # clair-report
-[clair-scanner](https://github.com/arminc/clair-scanner) is a convenient tool for local docker image scan with white-list, but we have no idea what CVEs are impactive from the scanned results, also, you may need search CVE-IDs on Internet to get CVE-IDs details.
+[clair-scanner](https://github.com/arminc/clair-scanner) is a convenient tool for local docker image scan with white-list, but we have no idea how the CVEs are impactive from the scanned results, also, you may need search CVE-IDs on Internet to get CVE-IDs details.
 In order to solve above problems, clair-report is a python script which helps you generate simple web reports by using [clair-scanner](https://github.com/arminc/clair-scanner), [nginx](https://hub.docker.com/r/library/nginx/) and [pelican](http://docs.getpelican.com/en/stable/#). You can get the level of impact and details from [Red Hat CVE Database](https://access.redhat.com/security/security-updates/#/cve) via the web reports quickly.
 
 Do the following steps to install essential packages and set up an executable environment on baremetel.
