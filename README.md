@@ -15,7 +15,7 @@ sudo pip install -U pip docker-py
 ```
 
 ## 2. Install Go programming language
-You can find go release versions from [release history]（https://golang.org/doc/devel/release.html）, and download the version you like.
+You can find go release versions from [release history](https://golang.org/doc/devel/release.html), and download the version you like.
 ```
 wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
 sudo tar -xzf go1.9.2.linux-amd64.tar.gz -C /usr/local
